@@ -1,0 +1,1 @@
+#include "basic_figure_factory.hpp"

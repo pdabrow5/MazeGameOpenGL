@@ -3,10 +3,9 @@
 
 #include "MazeGameOpenGL.h"
 
-using namespace std;
-
 int main()
 {
-	cout << "Hello CMake." << endl;
+	foo::func();
+	std::cout << "Hello CMake. " << std::endl;
 	return 0;
 }
