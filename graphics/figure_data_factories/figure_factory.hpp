@@ -2,6 +2,7 @@
 #include "../shaders/shader.hpp"
 
 class FigureFactory {
+ public:
   virtual Shader *MakeShader() const = 0;
   virtual FigureData *MakeFigureData(
       const std::vector<GLfloat> &vertices,

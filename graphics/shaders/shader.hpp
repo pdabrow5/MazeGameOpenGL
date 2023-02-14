@@ -23,10 +23,17 @@ class Shader {
   // Deletes the Shader Program
   void Delete();
 
-  virtual const char* GetVertexCode() const = 0;
-  virtual const char* GetFragmentCode() const = 0;
-
  private:
+  virtual const char* GetVertexCode() const = 0; //problem, stworzenie metody virtualnej naprawia
+  //{
+  //  std::cout << "bazowy wywo³any";
+  //  return " dfdf";
+  //};
+  virtual const char* GetFragmentCode() const = 0; //problem, stworzenie metody virtualnej naprawia
+  //{
+  //  std::cout << "bazowy wywo³any";
+  //  return " dfdf";
+  //};
   // Checks if the different Shaders have compiled properly
   GLuint ID;
   void compileErrors(unsigned int shader, const char* type);

@@ -35,10 +35,10 @@ set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
 #set(glfw3_DIR "C:src\\vcpkg\\installed\\x86-windows\\share\\glfw3")
 
 find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(graphics PRIVATE glfw)
+target_link_libraries(graphics PUBLIC glfw)
 
 find_package(glad CONFIG REQUIRED)
-target_link_libraries(graphics PRIVATE glad::glad)
+target_link_libraries(graphics PUBLIC glad::glad)
 
 find_package(glm CONFIG REQUIRED)
-target_link_libraries(graphics PRIVATE glm::glm)
+target_link_libraries(graphics PUBLIC glm::glm)

@@ -1,6 +1,7 @@
 #include "basic_shader.hpp"
 
 const char* BasicShader::GetVertexCode() const {
+  std::cout << "drugi wywo³any";
   return "#version 330 core\n"
     ""
     "layout(location = 0) in vec3 aPos;\n"
@@ -20,6 +21,7 @@ const char* BasicShader::GetVertexCode() const {
 }
 
 const char* BasicShader::GetFragmentCode() const { 
+  std::cout << "drugi wywo³any";
   return "#version 330 core\n"
     ""
     "out vec4 FragColor;\n"
@@ -28,4 +30,5 @@ const char* BasicShader::GetFragmentCode() const {
     "void main()\n"
     "{\n"
     "  FragColor = vec4(color, 1.0f);\n"
-    "}\n";}
+    "}\n";
+}
