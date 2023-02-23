@@ -5,44 +5,11 @@
 #include <stdexcept>
 #include <string>
 
-//namespace {
-//inline const char* get_vertex_code() {
-//  return "#version 330 core\n"
-//         ""
-//         "layout(location = 0) in vec3 aPos;\n"
-//         "layout(location = 1) in vec3 aColor;\n"
-//         ""
-//         "out vec3 color;\n"
-//         "uniform float scale;\n"
-//         ""
-//         "uniform mat4 model;\n"
-//         "uniform mat4 view;\n"
-//         "uniform mat4 proj;\n"
-//         ""
-//         "void main() {\n"
-//         "  gl_Position = proj * view * model * vec4(aPos, 1.0);\n"
-//         "  color = aColor;\n"
-//         "}\n";
-//}
-//
-//inline const char* get_fragment_code() {
-//  return "#version 330 core\n"
-//         ""
-//         "out vec4 FragColor;\n"
-//         "in vec3 color;\n"
-//         ""
-//         "void main()\n"
-//         "{\n"
-//         "  FragColor = vec4(color, 1.0f);\n"
-//         "}\n";
-//}
-//}  // namespace
-
 // Constructor that build the Shader Program from 2 different shaders
-Shader::Shader() {
+Shader::Shader(const std::string& frag_code, const std::string& vert_code) {
   // Convert the shader source strings into character arrays
-  const char* vertexSource = GetVertexCode();
-  const char* fragmentSource = GetFragmentCode();
+  const char* vertexSource = vert_code.data();
+  const char* fragmentSource = frag_code.data();
 
   // Create Vertex Shader Object and get its reference
   GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);

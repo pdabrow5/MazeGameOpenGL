@@ -5,11 +5,13 @@ cmake_minimum_required (VERSION 3.8)
 
 
 
-project ("MazeGameOpenGL")
-add_executable (MazeGameOpenGL "MazeGameOpenGL.cpp" "MazeGameOpenGL.h")
+project (root)
+#add_executable (MazeGameOpenGL "MazeGameOpenGL.cpp")
 
-add_subdirectory(graphics)
-target_link_libraries(${PROJECT_NAME} graphics)
+#add_subdirectory(graphics)
+#target_link_libraries(${PROJECT_NAME} graphics)
+
+add_subdirectory(src)
 
 #set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
 

@@ -15,7 +15,7 @@ class Shader {
   // Reference ID of the Shader Program
 
   // Constructor that build the Shader Program from 2 different shaders
-  Shader();
+  Shader(const std::string &frag_code, const std::string &vert_code);
   ~Shader() { Delete(); }
   GLuint GetId() const { return ID; }
   // Activates the Shader Program
@@ -24,16 +24,7 @@ class Shader {
   void Delete();
 
  private:
-  virtual const char* GetVertexCode() const = 0; //problem, stworzenie metody virtualnej naprawia
-  //{
-  //  std::cout << "bazowy wywo³any";
-  //  return " dfdf";
-  //};
-  virtual const char* GetFragmentCode() const = 0; //problem, stworzenie metody virtualnej naprawia
-  //{
-  //  std::cout << "bazowy wywo³any";
-  //  return " dfdf";
-  //};
+
   // Checks if the different Shaders have compiled properly
   GLuint ID;
   void compileErrors(unsigned int shader, const char* type);

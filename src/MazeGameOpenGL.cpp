@@ -1,13 +1,11 @@
-﻿// MazeGameOpenGL.cpp : Defines the entry point for the application.
-//
-
-#include "MazeGameOpenGL.h"
-#include "graphics/figure_data_factories/basic_figure_factory.hpp"
+﻿#include "graphics/figure_data_factories/basic_figure_factory.hpp"
 #include "graphics/figures/Figure.hpp"
 #include "glm/gtx/transform.hpp"
 #include "glm/gtx/euler_angles.hpp"
 #include <sstream>
 #include <iomanip>
+
+#include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
 

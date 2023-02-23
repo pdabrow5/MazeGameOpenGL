@@ -9,6 +9,7 @@ set(HEADERS
         shaders/basic_shader.hpp
         figure_data_factories/figure_factory.hpp
         figure_data_factories/basic_figure_factory.hpp
+        figures/Figure.hpp
         )
 set(SOURCES
         Shape.cpp
@@ -21,12 +22,14 @@ set(SOURCES
         shaders/basic_shader.cpp
         figure_data_factories/figure_factory.cpp
         figure_data_factories/basic_figure_factory.cpp
+        figures/Figure.cpp
+
 
         )
 
 add_library(graphics ${HEADERS} ${SOURCES})
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+#target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
 set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
 
@@ -34,11 +37,13 @@ set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
 #include_directories(${GLFW3_INCLUDE_DIR})
 #set(glfw3_DIR "C:src\\vcpkg\\installed\\x86-windows\\share\\glfw3")
 
-find_package(glfw3 CONFIG REQUIRED)
-target_link_libraries(graphics PUBLIC glfw)
+
 
 find_package(glad CONFIG REQUIRED)
 target_link_libraries(graphics PUBLIC glad::glad)
 
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(graphics PUBLIC glm::glm)
+
+find_package(glfw3 3.3 REQUIRED)
+target_link_libraries(graphics PUBLIC glfw)
