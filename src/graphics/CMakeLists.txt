@@ -31,7 +31,8 @@ add_library(graphics ${HEADERS} ${SOURCES})
 
 #target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
-set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
+#set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
+set(CMAKE_PREFIX_PATH "C:/src/vcpkg/installed/x64-windows/share")
 
 #find_path(GLFW3_INCLUDE_DIR NAMES glfw3.h PATH_SUFFIXES GLFW)
 #include_directories(${GLFW3_INCLUDE_DIR})
