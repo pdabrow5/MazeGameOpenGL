@@ -1,6 +1,9 @@
 // source: https://github.com/VictorGordan/opengl-tutorials.git
 #include "VAO.hpp"
 
+
+namespace graphics {
+
 // Constructor that generates a VAO ID
 VAO::VAO() { glGenVertexArrays(1, &ID); }
 
@@ -21,3 +24,5 @@ void VAO::Unbind() const { glBindVertexArray(0); }
 
 // Deletes the VAO
 void VAO::Delete() { glDeleteVertexArrays(1, &ID); }
+
+}  // namespace graphics

@@ -3,6 +3,7 @@
 #include <cassert>
 #include <string>
 
+namespace graphics {
 
 #define assertm(exp, msg) assert(((void)msg, exp))
 
@@ -22,6 +23,26 @@ FigureData::FigureData(const std::vector<GLfloat>& vertices,
   ebo_->Unbind();
 }
 
+FigureData::FigureData(std::unique_ptr<VertexData> vertex_data,
+                       std::unique_ptr<VertexDataChecker> vertex_data_checker) {
+  if (!vertex_data_checker->IsDataValid(*vertex_data))
+    throw std::invalid_argument("Wrong VertexData format");
+
+  vao_ = std::make_unique<VAO const>();
+  vao_->Bind();
+  vbo_ = std::make_unique<VBO const>(vertex_data->vertices.data(),
+      vertex_data->vertices.size() * sizeof(GLfloat));
+  ebo_ = std::make_unique<EBO const>(vertex_data->indices.data(),
+      vertex_data->indices.size() * sizeof(GLuint));
+  LinkVaoAttrib(vertex_data->vertices, vertex_data->indices,
+                vertex_data->data_format);
+
+  vao_->Unbind();
+  vbo_->Unbind();
+  ebo_->Unbind();
+
+}
+
 
 
 void FigureData::CheckVerticesFormat(
@@ -38,28 +59,24 @@ void FigureData::CheckVerticesFormat(
 void FigureData::CheckIndicesFormat(const std::vector<GLfloat>& vertices,
                                     const std::vector<GLuint>& indices,
                                     const size_t &size_of_vertex) const {
-  //if (indices.size() % 3 != 0)
-  //  return false;
-  //else
-  //  for (size_t i = 0; i < indices.size(); i += 3) {
-  //    if (indices[i] == indices[i + 1] || indices[i] == indices[i + 2] ||
-  //        indices[i + 1] == indices[i + 2])
-  //      return false;
-  //    if (indices[i] >= vertices.size() || indices[i + 1] >= vertices.size() ||
-  //        indices[i + 2] >= vertices.size())
-  //      return false;
-  //  }
-  //return true;
   assertm(indices.size() % 3 == 0, "Number of indices must be multiple of 3.");
 
   bool each_set_is_triangle = true;
-  for (size_t i = 0; i < indices.size(); i += 3)
-    if (indices[i] == indices[i + 1] || indices[i] == indices[i + 2] ||
-        indices[i + 1] == indices[i + 2]) {
-      each_set_is_triangle = false;
-      break;
-    }
-  assertm(each_set_is_triangle, "Each index in each set of 3 must point other vertex.");
+  for (size_t i = 0; i < indices.size(); i += 3) {
+    bool each_set_is_triangle =
+        (indices[i] != indices[i + 1] &&
+        indices[i] != indices[i + 2] &&
+        indices[i + 1] != indices[i + 2]);
+      assertm(each_set_is_triangle,
+        "Each index in each set of 3 must point other vertex.");
+  }
+
+    //if (indices[i] == indices[i + 1] || indices[i] == indices[i + 2] ||
+    //    indices[i + 1] == indices[i + 2]) {
+    //  each_set_is_triangle = false;
+    //  break;
+    //}
+  
 
   bool index_in_range = true;
   for (auto& index : indices)
@@ -67,7 +84,7 @@ void FigureData::CheckIndicesFormat(const std::vector<GLfloat>& vertices,
       index_in_range = false;
       break;
     }
-  assert(index_in_range, "Index must reffer to vertex.");
+  assertm(index_in_range, "Index must reffer to vertex.");
 }
 
 void FigureData::CheckFormatCorrectness(
@@ -101,3 +118,5 @@ void FigureData::LinkVaoAttrib(const std::vector<GLfloat>& vertices,
     offset += data_format[i];
   }
 }
+
+}  // namespace graphics

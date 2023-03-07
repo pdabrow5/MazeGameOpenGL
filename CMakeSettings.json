@@ -9,7 +9,20 @@
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "cmakeCommandArgs": "",
       "buildCommandArgs": "",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "glfw3_DIR",
+          "value": "C:/src/vcpkg/installed/x64-windows/share/glfw3",
+          "type": "PATH"
+        },
+        {
+          "name": "glm_DIR",
+          "value": "C:/Users/pawda/source/repos/MazeGameOpenGL/vcpkg/installed/x64-windows/share/glm",
+          "type": "PATH"
+        }
+      ],
+      "cmakeToolchain": "C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake"
     }
   ]
 }

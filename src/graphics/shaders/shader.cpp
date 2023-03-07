@@ -5,6 +5,9 @@
 #include <stdexcept>
 #include <string>
 
+namespace graphics {
+
+
 // Constructor that build the Shader Program from 2 different shaders
 Shader::Shader(const std::string& frag_code, const std::string& vert_code) {
   // Convert the shader source strings into character arrays
@@ -72,3 +75,5 @@ void Shader::compileErrors(unsigned int shader, const char* type) {
     }
   }
 }
+
+}  // namespace graphics

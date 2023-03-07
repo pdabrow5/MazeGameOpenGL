@@ -6,6 +6,8 @@
 
 #include "VBO.hpp"
 
+namespace graphics {
+
 class VAO {
  public:
   // Constructor that generates a VAO ID
@@ -29,5 +31,7 @@ class VAO {
   // ID reference for the Vertex Array Object
   GLuint ID;
 };
+
+}  // namespace graphics
 
 #endif

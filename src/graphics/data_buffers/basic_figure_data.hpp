@@ -3,6 +3,9 @@
 
 #include "figure_data.hpp"
 
+
+namespace graphics {
+
 class BasicFigureData final : public FigureData {
   // using FigureData::FigureData;
  public:
@@ -15,5 +18,6 @@ class BasicFigureData final : public FigureData {
                             const std::vector<GLuint> &indices) const override;
 };
 
+}  // namespace graphics
 
 #endif  // !BASIC_FIGURE_DATA_HPP_

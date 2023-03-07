@@ -10,6 +10,8 @@
 #include <sstream>
 #include <string>
 
+namespace graphics {
+
 class Shader {
  public:
   // Reference ID of the Shader Program
@@ -30,6 +32,9 @@ class Shader {
   void compileErrors(unsigned int shader, const char* type);
 
 };
+
+}  //namespace graphics 
+
 
 
 #endif  // !SHADER_HPP_

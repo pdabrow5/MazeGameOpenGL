@@ -4,6 +4,8 @@
 
 #include <glad/glad.h>
 
+namespace graphics {
+
 class EBO {
  public:
 
@@ -29,4 +31,5 @@ class EBO {
   unsigned int count;
 };
 
+}  //namespace graphics
 #endif

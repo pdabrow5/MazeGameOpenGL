@@ -1,6 +1,9 @@
 // source: https://github.com/VictorGordan/opengl-tutorials.git
 #include "VBO.hpp"
 
+
+namespace graphics {
+
 // Constructor that generates a Vertex Buffer Object and links it to vertices
 VBO::VBO(GLfloat const* vertices, const GLsizeiptr& size) {
   glGenBuffers(1, &ID);
@@ -20,3 +23,5 @@ void VBO::Unbind() const { glBindBuffer(GL_ARRAY_BUFFER, 0); }
 
 // Deletes the VBO
 void VBO::Delete() { glDeleteBuffers(1, &ID); }
+
+}  // namespace graphics

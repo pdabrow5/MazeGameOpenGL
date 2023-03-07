@@ -1,13 +1,15 @@
 #ifndef FIGURE_HPP_
 #define FIGURE_HPP_
 
-#include "../figure_data_factories/basic_figure_factory.hpp"
+#include "../data_buffers/figure_data.hpp"
+#include "../shaders/shader.hpp"
+
+namespace graphics {
 
 class Figure {
  public:
-  Figure(const FigureFactory &factory, 
-         const std::vector<GLfloat> &vertices,
-         const std::vector<GLuint> &indices);
+  Figure(std::shared_ptr<FigureData> figure_data,
+         std::shared_ptr<Shader> shader);
   void Move(const glm::vec3 &vec);
   void Rotate(const glm::vec3 &vec);
   void SetPosition(const glm::vec3 &vec);
@@ -24,4 +26,8 @@ class Figure {
     glm::mat4 proj;
   } mvp_;
 };
+
+}  // namespace graphics
+
+
 #endif  // !FIGURE_HPP_

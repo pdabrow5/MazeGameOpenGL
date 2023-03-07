@@ -4,15 +4,22 @@
 #include "EBO.hpp"
 #include "VBO.hpp"
 #include "VAO.hpp"
+#include "vertex_data.hpp"
+#include "vertex_data_checkers/vertex_data_checker.hpp"
 
 #include <memory>
 #include <vector>
+
+namespace graphics {
 
 class FigureData {
  public:
   FigureData(const std::vector<GLfloat> &vertices,
              const std::vector<GLuint> &indices,
              const std::vector<GLuint> &data_format);
+
+  FigureData(std::unique_ptr<VertexData> vertex_data,
+             std::unique_ptr<VertexDataChecker> vertex_data_checker);
 
   void BindVao() const { vao_->Bind();}
 
@@ -37,14 +44,17 @@ class FigureData {
   void CheckFormatCorrectness(const std::vector<GLuint> &data_format) const;
 
   virtual void CheckAdditionalRules(
-      const std::vector<GLfloat> &vertices, 
-      const std::vector<GLuint> &indices) const = 0;
+      const std::vector<GLfloat> &vertices,
+      const std::vector<GLuint> &indices) const {}
 
   void LinkVaoAttrib(const std::vector<GLfloat> &vertices,
                      const std::vector<GLuint> &indices,
                      const std::vector<GLuint> &data_format) const;
 
 };
+
+}  // namespace graphics
+
 
 
 #endif  // !FIGURE_DATA_CLASS_HPP_

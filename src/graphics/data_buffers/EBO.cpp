@@ -1,6 +1,8 @@
 // source: https://github.com/VictorGordan/opengl-tutorials.git
 #include "EBO.hpp"
 
+namespace graphics {
+
 // Constructor that generates a Elements Buffer Object and links it to indices
 EBO::EBO(GLuint const* indices, const GLsizeiptr& size) {
   glGenBuffers(1, &ID);
@@ -17,3 +19,6 @@ void EBO::Unbind() const { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); }
 
 // Deletes the EBO
 void EBO::Delete() { glDeleteBuffers(1, &ID); }
+
+
+}  //namespace graphics 

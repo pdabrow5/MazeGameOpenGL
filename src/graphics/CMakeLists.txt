@@ -1,5 +1,4 @@
 set(HEADERS
-        Shape.hpp
         data_buffers/EBO.hpp
         data_buffers/VAO.hpp
         data_buffers/VBO.hpp
@@ -9,10 +8,13 @@ set(HEADERS
         shaders/basic_shader.hpp
         figure_data_factories/figure_factory.hpp
         figure_data_factories/basic_figure_factory.hpp
-        figures/Figure.hpp
-        )
+        "figures/figure.hpp"
+        "figures/complex_figures/state_figure.hpp"
+        "figures/complex_figures/maze_figure.hpp"
+         "data_buffers/vertex_data.hpp"
+         "data_buffers/vertex_data_checkers/vertex_data_checker.hpp" "data_buffers/vertex_data_checkers/basic_vertex_data_checker.hpp")
 set(SOURCES
-        Shape.cpp
+        
         data_buffers/EBO.cpp
         data_buffers/VAO.cpp
         data_buffers/VBO.cpp 
@@ -22,10 +24,10 @@ set(SOURCES
         shaders/basic_shader.cpp
         figure_data_factories/figure_factory.cpp
         figure_data_factories/basic_figure_factory.cpp
-        figures/Figure.cpp
+        "figures/figure.cpp"
+        "figures/complex_figures/maze_figure.cpp"
 
-
-        )
+         "data_buffers/vertex_data_checkers/basic_vertex_data_checker.cpp" "data_buffers/vertex_data_checkers/vertex_data_checker.cpp")
 
 add_library(graphics ${HEADERS} ${SOURCES})
 
@@ -46,5 +48,5 @@ target_link_libraries(graphics PUBLIC glad::glad)
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(graphics PUBLIC glm::glm)
 
-find_package(glfw3 3.3 REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(graphics PUBLIC glfw)
