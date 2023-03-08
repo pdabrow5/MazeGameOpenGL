@@ -15,6 +15,10 @@ MazeGame is a simple Cmake project written in C++ using OpenGL to render 3D grap
 - Cmake (solve problems with including vcpkg submodule)
 - documentation in Doxygen
 
+
+##Game
 The game is about solving maze puzzle displayed on screen, to achieve that, use keyboard arrows to move cube pawn around.
-**gfgd**
+
+
 ![alt text](https://github.com/pdabrow5/MazeGameOpenGL/blob/master/Screenshot%20from%202023-03-09%2001-45-17.png)
+*The original project final appearance*
