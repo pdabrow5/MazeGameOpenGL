@@ -16,7 +16,7 @@ FigureData::FigureData(const std::vector<GLfloat>& vertices,
   vao_->Bind();
   vbo_ = std::make_unique<VBO const>(vertices.data(), vertices.size() * sizeof(GLfloat));
   ebo_ = std::make_unique<EBO const>(indices.data(), indices.size() * sizeof(GLuint));
-  LinkVaoAttrib(vertices, indices, data_format);
+  LinkVaoAttrib(data_format);
 
   vao_->Unbind();
   vbo_->Unbind();
@@ -34,8 +34,7 @@ FigureData::FigureData(std::unique_ptr<VertexData> vertex_data,
       vertex_data->vertices.size() * sizeof(GLfloat));
   ebo_ = std::make_unique<EBO const>(vertex_data->indices.data(),
       vertex_data->indices.size() * sizeof(GLuint));
-  LinkVaoAttrib(vertex_data->vertices, vertex_data->indices,
-                vertex_data->data_format);
+  LinkVaoAttrib(vertex_data->data_format);
 
   vao_->Unbind();
   vbo_->Unbind();
@@ -106,9 +105,7 @@ void FigureData::CheckDataFormat(const std::vector<GLfloat>& vertices,
 }
 
 
-void FigureData::LinkVaoAttrib(const std::vector<GLfloat>& vertices,
-                               const std::vector<GLuint>& indices,
-                               const std::vector<GLuint>& data_format) const {
+void FigureData::LinkVaoAttrib(const std::vector<GLuint>& data_format) const {
   GLuint size = 0;
   for (auto & elem : data_format) size += elem;
   GLuint offset = 0;

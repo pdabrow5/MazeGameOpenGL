@@ -123,7 +123,15 @@ int main()
 
     auto maze = factory.MakeFigure(factory.MakeMazeFigure(
         layout.GetWallsCoordinates(1.0f),
-        factory.MakeRectangle(glm::vec2(0.5f, 0.5f), glm::vec3(0.5, 0.2, 0.2) )));
+        factory.MakeShadedCuboid(glm::vec3(0.5f, 0.5f, 30.0f),
+                                 glm::vec3(0.5f, 0.5f, 0.0f),
+                                     glm::vec2(0.1f, 0.8f))));
+    //auto fiddd = factory.MakeMazeFigure(
+    //    layout.GetWallsCoordinates(1.0f),
+    //    factory.MakeShadedCuboid(glm::vec3(0.5f, 0.5f, 30.0f),
+    //                             glm::vec3(0.5f, 0.5f, 0.0f),
+    //                             glm::vec2(0.1f, 0.8f)));
+    //std::cout << "V:" << fiddd->vertices.size() << ", I: " << fiddd->indices.size() << std::endl;
     //graphics::MazeFigure maze(layout, *fig, 1.0f);
 
     fig->Move(glm::vec3{2.0f, 0.0f, -15.0f});
@@ -164,7 +172,7 @@ int main()
         Tac = glfwGetTime();
       }
       if ((FPStime_c - FPStime_p) > 1.0f) {
-        std::cout << "FPS: " << (1 / (Tac - Tic)) << std::endl;
+        //std::cout << "FPS: " << (1 / (Tac - Tic)) << std::endl;
         FPStime_p = FPStime_c;
       }
       

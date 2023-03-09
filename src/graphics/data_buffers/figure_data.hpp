@@ -47,9 +47,7 @@ class FigureData {
       const std::vector<GLfloat> &vertices,
       const std::vector<GLuint> &indices) const {}
 
-  void LinkVaoAttrib(const std::vector<GLfloat> &vertices,
-                     const std::vector<GLuint> &indices,
-                     const std::vector<GLuint> &data_format) const;
+  void LinkVaoAttrib(const std::vector<GLuint> &data_format) const;
 
 };
 

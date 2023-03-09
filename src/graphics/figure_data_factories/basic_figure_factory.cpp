@@ -219,18 +219,18 @@ std::unique_ptr<VertexData> BasicFigureFactory::MakeMazeFigure(
     const std::vector<glm::vec3> &walls_coordinates,
     std::unique_ptr<VertexData> wall_pattern) const {
 
-    size_t vertex_size = 6;
-    size_t wall_vertices_size = wall_pattern->vertices.size();
-    size_t wall_indices_size = wall_pattern->indices.size();
-    size_t number_of_vertices = wall_vertices_size / vertex_size;
-    size_t number_of_walls = walls_coordinates.size();
+    GLuint vertex_size = 6;
+    GLuint wall_vertices_size = wall_pattern->vertices.size();
+    GLuint wall_indices_size = wall_pattern->indices.size();
+    GLuint number_of_vertices = wall_vertices_size / vertex_size;
+    GLuint number_of_walls = walls_coordinates.size();
     std::vector<GLfloat> vertices(wall_vertices_size * walls_coordinates.size());
     std::vector<GLuint> indices(wall_indices_size * walls_coordinates.size());
 
-    for (size_t wall = 0; wall < number_of_walls; ++wall) {
-      size_t v_offset = wall * wall_vertices_size;
-      size_t i_offset = wall * wall_indices_size;
-      size_t index_offset = wall * number_of_vertices;
+    for (GLuint wall = 0; wall < number_of_walls; ++wall) {
+      GLuint v_offset = wall * wall_vertices_size;
+      GLuint i_offset = wall * wall_indices_size;
+      GLuint index_offset = wall * number_of_vertices;
       for (size_t vert = 0; vert < wall_vertices_size; vert += vertex_size) {
         vertices[vert + v_offset] = wall_pattern->vertices[vert] + walls_coordinates[wall].x;
         vertices[vert + v_offset + 1] = wall_pattern->vertices[vert + 1] + walls_coordinates[wall].y;

@@ -11,13 +11,13 @@ std::unique_ptr<FigureData> FigureFactory::MakeFigureData2(
 std::unique_ptr<Figure> FigureFactory::MakeFigure(
     std::unique_ptr<VertexData> vertex_data) const {
   return std::make_unique<Figure>(
-      MakeFigureData2(std::move(vertex_data), MakeVertexDataChecker()), MakeShader());
+      std::move(MakeFigureData2(std::move(vertex_data), MakeVertexDataChecker())), MakeShader());
 }
 std::unique_ptr<Figure> FigureFactory::MakeFigure(
     std::unique_ptr<VertexData> vertex_data,
     std::shared_ptr<Shader> shader) const {
   return std::make_unique<Figure>(
-      MakeFigureData2(std::move(vertex_data), MakeVertexDataChecker()),
+      std::move(MakeFigureData2(std::move(vertex_data), MakeVertexDataChecker())),
       shader);
 }
 
