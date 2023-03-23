@@ -17,6 +17,7 @@ class FigureFactory {
   virtual std::unique_ptr<FigureData> MakeFigureData(
       const std::vector<GLfloat> &vertices,
       const std::vector<GLuint> &indices) const = 0;
+  
 
   std::unique_ptr<FigureData> MakeFigureData2(
       std::unique_ptr<VertexData> vertex_data,

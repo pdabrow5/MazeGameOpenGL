@@ -8,11 +8,12 @@ set(HEADERS
         shaders/basic_shader.hpp
         figure_data_factories/figure_factory.hpp
         figure_data_factories/basic_figure_factory.hpp
-        "figures/figure.hpp"
-        "figures/complex_figures/state_figure.hpp"
-        "figures/complex_figures/maze_figure.hpp"
-         "data_buffers/vertex_data.hpp"
-         "data_buffers/vertex_data_checkers/vertex_data_checker.hpp" "data_buffers/vertex_data_checkers/basic_vertex_data_checker.hpp")
+        figures/figure.hpp
+        figures/complex_figures/state_figure.hpp
+        figures/complex_figures/maze_figure.hpp
+        data_buffers/vertex_data.hpp
+        data_buffers/vertex_data_checkers/vertex_data_checker.hpp
+        data_buffers/vertex_data_checkers/basic_vertex_data_checker.hpp)
 set(SOURCES
         
         data_buffers/EBO.cpp
@@ -33,8 +34,9 @@ add_library(graphics ${HEADERS} ${SOURCES})
 
 #target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
-#set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
-set(CMAKE_PREFIX_PATH "C:/src/vcpkg/installed/x64-windows/share")
+set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg/installed/x64-windows/share")
+
+#set(CMAKE_PREFIX_PATH "C:/src/vcpkg/installed/x64-windows/share")
 
 #find_path(GLFW3_INCLUDE_DIR NAMES glfw3.h PATH_SUFFIXES GLFW)
 #include_directories(${GLFW3_INCLUDE_DIR})

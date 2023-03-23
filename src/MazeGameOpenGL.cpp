@@ -55,6 +55,8 @@ int main()
 	std::cout << "Hello CMake. " << std::endl;
     std::cout << Vec3ToStr(pose_) << std::endl;
     std::cout << Vec3ToStr(pose_new) << std::endl;
+    std::vector<int> vec(3, 1);
+    std::cout << vec[0];
 
     const auto p = graphics::MazeLayout::MazeCellType::path;
     const auto w = graphics::MazeLayout::MazeCellType::wall;
@@ -172,7 +174,7 @@ int main()
         Tac = glfwGetTime();
       }
       if ((FPStime_c - FPStime_p) > 1.0f) {
-        //std::cout << "FPS: " << (1 / (Tac - Tic)) << std::endl;
+        std::cout << "FPS: " << (1 / (Tac - Tic)) << std::endl;
         FPStime_p = FPStime_c;
       }
       
