@@ -1,4 +1,6 @@
 #include "basic_figure_factory.hpp"
+#include <thread>
+#include <GLFW/glfw3.h>
 namespace graphics {
 
 std::unique_ptr<Shader> BasicFigureFactory::MakeShader() const {
@@ -217,8 +219,7 @@ std::unique_ptr<VertexData> BasicFigureFactory::MakeDetailedCuboid(
 
 std::unique_ptr<VertexData> BasicFigureFactory::MakeMazeFigure(
     const std::vector<glm::vec3> &walls_coordinates,
-    std::unique_ptr<VertexData> wall_pattern) const {
-
+    std::unique_ptr<const VertexData> wall_pattern) const {
     GLuint vertex_size = 6;
     GLuint wall_vertices_size = wall_pattern->vertices.size();
     GLuint wall_indices_size = wall_pattern->indices.size();
@@ -226,22 +227,53 @@ std::unique_ptr<VertexData> BasicFigureFactory::MakeMazeFigure(
     GLuint number_of_walls = walls_coordinates.size();
     std::vector<GLfloat> vertices(wall_vertices_size * walls_coordinates.size());
     std::vector<GLuint> indices(wall_indices_size * walls_coordinates.size());
-
-    for (GLuint wall = 0; wall < number_of_walls; ++wall) {
-      GLuint v_offset = wall * wall_vertices_size;
-      GLuint i_offset = wall * wall_indices_size;
-      GLuint index_offset = wall * number_of_vertices;
-      for (size_t vert = 0; vert < wall_vertices_size; vert += vertex_size) {
-        vertices[vert + v_offset] = wall_pattern->vertices[vert] + walls_coordinates[wall].x;
-        vertices[vert + v_offset + 1] = wall_pattern->vertices[vert + 1] + walls_coordinates[wall].y;
-        vertices[vert + v_offset + 2] = wall_pattern->vertices[vert + 2] + walls_coordinates[wall].z;
-        vertices[vert + v_offset + 3] = wall_pattern->vertices[vert + 3];
-        vertices[vert + v_offset + 4] = wall_pattern->vertices[vert + 4];
-        vertices[vert + v_offset + 5] = wall_pattern->vertices[vert + 5];
+    double startTime = glfwGetTime();
+    auto fill_vertices = [&]() {
+      for (GLuint wall = 0; wall < number_of_walls; ++wall) {
+        GLuint v_offset = wall * wall_vertices_size;
+        for (size_t vert = 0; vert < wall_vertices_size; vert += vertex_size) {
+          vertices[vert + v_offset] =
+              wall_pattern->vertices[vert] + walls_coordinates[wall].x;
+          vertices[vert + v_offset + 1] =
+              wall_pattern->vertices[vert + 1] + walls_coordinates[wall].y;
+          vertices[vert + v_offset + 2] =
+              wall_pattern->vertices[vert + 2] + walls_coordinates[wall].z;
+          vertices[vert + v_offset + 3] = wall_pattern->vertices[vert + 3];
+          vertices[vert + v_offset + 4] = wall_pattern->vertices[vert + 4];
+          vertices[vert + v_offset + 5] = wall_pattern->vertices[vert + 5];
+        }
       }
-      for (size_t index = 0; index < wall_indices_size; ++index)
-        indices[index + i_offset] = wall_pattern->indices[index] + index_offset;
-    }
+    };
+    auto fill_indices = [&]() {
+      for (GLuint wall = 0; wall < number_of_walls; ++wall) {
+        GLuint i_offset = wall * wall_indices_size;
+        GLuint index_offset = wall * number_of_vertices;
+        for (size_t index = 0; index < wall_indices_size; ++index)
+          indices[index + i_offset] =
+              wall_pattern->indices[index] + index_offset;
+      }
+    };
+    std::thread process_indices(fill_indices);
+    std::thread process_vertices(fill_vertices);
+    //for (GLuint wall = 0; wall < number_of_walls; ++wall) {
+    //  GLuint v_offset = wall * wall_vertices_size;
+    //  GLuint i_offset = wall * wall_indices_size;
+    //  GLuint index_offset = wall * number_of_vertices;
+    //  for (size_t vert = 0; vert < wall_vertices_size; vert += vertex_size) {
+    //    vertices[vert + v_offset] = wall_pattern->vertices[vert] + walls_coordinates[wall].x;
+    //    vertices[vert + v_offset + 1] = wall_pattern->vertices[vert + 1] + walls_coordinates[wall].y;
+    //    vertices[vert + v_offset + 2] = wall_pattern->vertices[vert + 2] + walls_coordinates[wall].z;
+    //    vertices[vert + v_offset + 3] = wall_pattern->vertices[vert + 3];
+    //    vertices[vert + v_offset + 4] = wall_pattern->vertices[vert + 4];
+    //    vertices[vert + v_offset + 5] = wall_pattern->vertices[vert + 5];
+    //  }
+    //  for (size_t index = 0; index < wall_indices_size; ++index)
+    //    indices[index + i_offset] = wall_pattern->indices[index] + index_offset;
+    //}
+    process_indices.join();
+    process_vertices.join();
+    double stopTime = glfwGetTime();
+    std::cout << "CREATING MAZE TOOK " << stopTime - startTime << std::endl;
     std::vector<GLuint> data_format{3, 3};
     return std::make_unique<VertexData>(std::move(vertices), std::move(indices), std::move(data_format));
 }

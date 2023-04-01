@@ -41,7 +41,7 @@ class BasicFigureFactory final : public FigureFactory {
 
   virtual std::unique_ptr<VertexData> MakeMazeFigure(
       const std::vector<glm::vec3> &walls_coordinates,
-      std::unique_ptr<VertexData> wall_pattern) const override;
+      std::unique_ptr<const VertexData> wall_pattern) const override;
 
 
  private:

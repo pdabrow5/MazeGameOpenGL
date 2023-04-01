@@ -50,7 +50,7 @@ class FigureFactory {
 
   virtual std::unique_ptr<VertexData> MakeMazeFigure(
       const std::vector<glm::vec3> &walls_coordinates,
-      std::unique_ptr<VertexData> wall_pattern) const = 0;
+      std::unique_ptr<const VertexData> wall_pattern) const = 0;
 };
 
 }  // namespace graphics
