@@ -26,7 +26,7 @@ class FigureData {
   void CheckDataFormat(const std::vector<GLfloat> &vertices,
                       const std::vector<GLuint> &indices,
                       const std::vector<GLuint> &data_format);
-  unsigned int FigureData::GetEBOCount() const { return ebo_->GetCount(); }
+  unsigned int GetEBOCount() const { return ebo_->GetCount(); }
 
  private:
   std::unique_ptr<EBO const> ebo_;

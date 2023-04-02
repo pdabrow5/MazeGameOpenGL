@@ -1,0 +1,8 @@
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/CMakeFiles/edit_cache.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/CMakeFiles/rebuild_cache.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/src/CMakeFiles/MazeGameOpenGL.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/src/CMakeFiles/edit_cache.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/src/CMakeFiles/rebuild_cache.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/src/graphics/CMakeFiles/graphics.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/src/graphics/CMakeFiles/edit_cache.dir
+/home/pablo/Documents/Repos/MazeGameOpenGL/build/src/graphics/CMakeFiles/rebuild_cache.dir

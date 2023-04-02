@@ -5,7 +5,7 @@ namespace graphics {
 
 std::unique_ptr<Shader> BasicFigureFactory::MakeShader() const {
 
-    std::string vert_code = 
+    std::string vert_code =
         "#version 330 core\n"
         ""
         "layout(location = 0) in vec3 aPos;\n"
@@ -23,8 +23,8 @@ std::unique_ptr<Shader> BasicFigureFactory::MakeShader() const {
         "  color = aColor;\n"
         "}\n";
 
-  
-std::string frag_code = 
+
+std::string frag_code =
         "#version 330 core\n"
         ""
         "out vec4 FragColor;\n"

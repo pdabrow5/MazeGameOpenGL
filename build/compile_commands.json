@@ -1,0 +1,72 @@
+[
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/CMakeFiles/MazeGameOpenGL.dir/MazeGameOpenGL.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/MazeGameOpenGL.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/MazeGameOpenGL.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/EBO.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/EBO.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/EBO.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/VAO.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/VAO.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/VAO.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/VBO.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/VBO.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/VBO.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/figure_data.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/figure_data.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/figure_data.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/basic_figure_data.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/basic_figure_data.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/basic_figure_data.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/shaders/shader.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/shaders/shader.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/shaders/shader.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/shaders/basic_shader.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/shaders/basic_shader.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/shaders/basic_shader.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/figure_data_factories/figure_factory.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figure_data_factories/figure_factory.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figure_data_factories/figure_factory.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/figure_data_factories/basic_figure_factory.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figure_data_factories/basic_figure_factory.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figure_data_factories/basic_figure_factory.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/figures/figure.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figures/figure.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figures/figure.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/figures/complex_figures/maze_figure.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figures/complex_figures/maze_figure.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/figures/complex_figures/maze_figure.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/vertex_data_checkers/basic_vertex_data_checker.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/vertex_data_checkers/basic_vertex_data_checker.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/vertex_data_checkers/basic_vertex_data_checker.cpp"
+},
+{
+  "directory": "/home/pablo/Documents/Repos/MazeGameOpenGL/build",
+  "command": "/usr/bin/g++ -I/home/pablo/Documents/Repos/MazeGameOpenGL/src/. -isystem /opt/vcpkg/installed/x64-linux/include -g -o src/graphics/CMakeFiles/graphics.dir/data_buffers/vertex_data_checkers/vertex_data_checker.cpp.o -c /home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/vertex_data_checkers/vertex_data_checker.cpp",
+  "file": "/home/pablo/Documents/Repos/MazeGameOpenGL/src/graphics/data_buffers/vertex_data_checkers/vertex_data_checker.cpp"
+}
+]

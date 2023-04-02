@@ -1,0 +1,23 @@
+# ninja log v5
+0	4	0	clean	a31eedcededa8236
+2	51	1680360962	src/graphics/CMakeFiles/graphics.dir/shaders/basic_shader.cpp.o	b23f3b50b525a7f3
+0	154	1680360962	src/graphics/CMakeFiles/graphics.dir/data_buffers/EBO.cpp.o	6676040ef47ad9e6
+1	1237	1680360963	src/graphics/CMakeFiles/graphics.dir/data_buffers/VBO.cpp.o	5cdfd690e76173e5
+1	1274	1680360963	src/graphics/CMakeFiles/graphics.dir/data_buffers/VAO.cpp.o	ac054578a41969e4
+1	2186	1680360964	src/graphics/CMakeFiles/graphics.dir/shaders/shader.cpp.o	d5ad06a539688903
+1238	3018	1680360965	src/graphics/CMakeFiles/graphics.dir/data_buffers/vertex_data_checkers/basic_vertex_data_checker.cpp.o	4590a06f9a0f4d1d
+1274	3066	1680360965	src/graphics/CMakeFiles/graphics.dir/data_buffers/vertex_data_checkers/vertex_data_checker.cpp.o	177d9fee0f4eb139
+2	2155	1680361014	src/graphics/CMakeFiles/graphics.dir/data_buffers/basic_figure_data.cpp.o	b2276e2a5c10b3c4
+3	2654	1680361014	src/graphics/CMakeFiles/graphics.dir/figures/complex_figures/maze_figure.cpp.o	e196edc21b5df690
+2	2742	1680361014	src/graphics/CMakeFiles/graphics.dir/data_buffers/figure_data.cpp.o	5a08fdc9afc985de
+3	3050	1680361015	src/graphics/CMakeFiles/graphics.dir/figures/figure.cpp.o	20af19d873687bb
+3	3123	1680361015	src/graphics/CMakeFiles/graphics.dir/figure_data_factories/figure_factory.cpp.o	5e3cd3721726e70
+3	3432	1680361015	src/graphics/CMakeFiles/graphics.dir/figure_data_factories/basic_figure_factory.cpp.o	ed1cb3298255b241
+3432	3477	1680361015	src/graphics/libgraphics.a	de44fcc871d99027
+2	3638	1680361015	src/CMakeFiles/MazeGameOpenGL.dir/MazeGameOpenGL.cpp.o	c5c267678619a2d9
+3638	3896	1680361015	src/MazeGameOpenGL	f8499ad5b4d571d0
+3	2421	1680361084	src/CMakeFiles/MazeGameOpenGL.dir/MazeGameOpenGL.cpp.o	c5c267678619a2d9
+2421	2675	1680361084	src/MazeGameOpenGL	f8499ad5b4d571d0
+2	2241	1680442641	src/graphics/CMakeFiles/graphics.dir/figure_data_factories/basic_figure_factory.cpp.o	ed1cb3298255b241
+2242	2301	1680442641	src/graphics/libgraphics.a	de44fcc871d99027
+2301	2593	1680442641	src/MazeGameOpenGL	f8499ad5b4d571d0

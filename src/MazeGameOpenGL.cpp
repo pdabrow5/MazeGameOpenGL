@@ -13,7 +13,7 @@
 
 #include <algorithm>
 
- 
+
 const unsigned int width = 800;
 const unsigned int height = 800;
 
@@ -23,7 +23,7 @@ int main()
   //auto shader = factory.MakeShader();
     const auto p = graphics::MazeLayout::MazeCellType::path;
     const auto w = graphics::MazeLayout::MazeCellType::wall;
-    const size_t maze_size = 1000;                                 // MAZE SIZE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    const size_t maze_size = 100;                                 // MAZE SIZE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     const float offset = -maze_size / 2;
     //std::vector<std::vector<graphics::MazeLayout::MazeCellType>> vec = {{w, p, p, w, w, p},
     //                                                       {p, p, p, w, w, p},
@@ -41,8 +41,8 @@ int main()
     //    std::cout << layout[row][element] << " ";
     //  std::cout << std::endl;
     //}
-     
-    
+
+
     glfwInit();
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -140,7 +140,7 @@ int main()
         std::cout << "FPS: " << (1 / (Tac - Tic)) << std::endl;
         FPStime_p = FPStime_c;
       }
-      
+
 
       //fig3->Show();
     }
