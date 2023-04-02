@@ -17,13 +17,7 @@ struct VertexData {
 
   VertexData(std::vector<GLfloat>&& vert, std::vector<GLuint>&& ind,
              std::vector<GLuint>&& data_form)
-      : vertices(vert), indices(ind), data_format(data_form) {
-    std::cout << "r_val constructor called \n";
-  }
-
-  ~VertexData() {
-    std::cout << "VERTEX DATA DELETED, SIZE: " << vertices.size() << std::endl;
-  }
+      : vertices(std::move(vert)), indices(std::move(ind)), data_format(std::move(data_form)) {}
 
 
   std::vector<GLfloat> vertices;

@@ -227,7 +227,7 @@ std::unique_ptr<VertexData> BasicFigureFactory::MakeMazeFigure(
     GLuint number_of_walls = walls_coordinates.size();
     std::vector<GLfloat> vertices(wall_vertices_size * walls_coordinates.size());
     std::vector<GLuint> indices(wall_indices_size * walls_coordinates.size());
-    double startTime = glfwGetTime();
+    // takes about 2.7s for 1000x1000 map
     auto fill_vertices = [&]() {
       for (GLuint wall = 0; wall < number_of_walls; ++wall) {
         GLuint v_offset = wall * wall_vertices_size;
@@ -244,6 +244,7 @@ std::unique_ptr<VertexData> BasicFigureFactory::MakeMazeFigure(
         }
       }
     };
+    // takes about 0.9s for 1000x1000 map
     auto fill_indices = [&]() {
       for (GLuint wall = 0; wall < number_of_walls; ++wall) {
         GLuint i_offset = wall * wall_indices_size;
@@ -272,8 +273,6 @@ std::unique_ptr<VertexData> BasicFigureFactory::MakeMazeFigure(
     //}
     process_indices.join();
     process_vertices.join();
-    double stopTime = glfwGetTime();
-    std::cout << "CREATING MAZE TOOK " << stopTime - startTime << std::endl;
     std::vector<GLuint> data_format{3, 3};
     return std::make_unique<VertexData>(std::move(vertices), std::move(indices), std::move(data_format));
 }

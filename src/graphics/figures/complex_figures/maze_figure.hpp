@@ -10,7 +10,7 @@ namespace graphics {
 
 class MazeLayout {
  public:
-  enum MazeCellType { path, wall };
+  enum class MazeCellType { path, wall };
   MazeLayout(const std::vector<std::vector<MazeCellType>> &layout)
       : layout_(layout) {}
 

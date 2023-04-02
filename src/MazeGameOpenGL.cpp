@@ -23,8 +23,7 @@ int main()
   //auto shader = factory.MakeShader();
     const auto p = graphics::MazeLayout::MazeCellType::path;
     const auto w = graphics::MazeLayout::MazeCellType::wall;
-    const size_t maze_size = 100;                                 // MAZE SIZE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    const float offset = -maze_size / 2;
+    const size_t maze_size = 1000;                                 // MAZE SIZE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //std::vector<std::vector<graphics::MazeLayout::MazeCellType>> vec = {{w, p, p, w, w, p},
     //                                                       {p, p, p, w, w, p},
     //                                                       {w, p, p, w, w, p}};
